@@ -11,7 +11,7 @@
 
 ### 📬 Контакты для связи
 * **Официальный Email:** [pyzhovs@icloud.com](mailto:pyzhovs@icloud.com)
-* **Разработчик:** Сергей Пыжов ([@PyzhovS](https://github.com/PyzhovS))
+* **Разработчик:** Сергей Пыжов
 * **Время ответа:** Обычно в течение 24 часов в рабочие дни.
 
 ---
@@ -46,7 +46,7 @@ If you have questions, feedback, feature requests, or technical issues with Rose
 
 ### 📬 Contact Us
 * **Official Support Email:** [pyzhovs@icloud.com](mailto:pyzhovs@icloud.com)
-* **Lead Developer:** Sergey Pyzhov ([@PyzhovS](https://github.com/PyzhovS))
+* **Lead Developer:** Sergey Pyzhov
 * **Response Time:** Typically within 24 hours on business days.
 
 ---
