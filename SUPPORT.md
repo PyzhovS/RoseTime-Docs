@@ -33,6 +33,9 @@
 #### 5. Как удалить все данные из приложения?
 Откройте вкладку «Профиль» $\to$ «Правовая информация и управление данными» $\to$ нажмите **«Сбросить все данные»**. Вся база данных будет безвозвратно удалена с устройства.
 
+#### 6. Что делать при аварийном сбое базы данных?
+Приложение оснащено системой **Store Safety Shield** — при любом сбое базы данных создается защитная копия `.corrupt_<timestamp>`. Обратитесь в службу поддержки (`pyzhovs@icloud.com`), и инженер восстановит все ваши записи согласно [Регламенту восстановления (Runbook)](DATABASE_RECOVERY_RUNBOOK.md).
+
 ---
 ---
 
@@ -64,6 +67,9 @@ During standard Apple iOS device-to-device migration (via Quick Start, encrypted
 
 #### 5. How can I completely erase my application data?
 Navigate to Profile $\to$ Data Management $\to$ select **"Reset All Data"**. This permanently and irreversibly purges the SwiftData database and resets app preferences.
+
+#### 6. What if my database experiences an emergency crash?
+RoseTime features **Store Safety Shield** — any crash archives your data into `.corrupt_<timestamp>`. Reach out to support (`pyzhovs@icloud.com`), and an engineer will restore your client and appointment logs per the [Database Recovery Runbook](DATABASE_RECOVERY_RUNBOOK.md).
 
 ---
 <p align="center">

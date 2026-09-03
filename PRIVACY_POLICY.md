@@ -45,17 +45,16 @@ RoseTime создано как ваш персональный интеллек�
 
 ---
 
-### 4. Умный ИИ-Ассистент и Политика Zero PII Shield
+### 4. Обработка данных сторонними сервисами искусственного интеллекта (Google Gemini API) и Zero-PII Shield
 
-Для работы интеллектуальных функций (разбор сообщений клиентов из мессенджеров, контекстный перенос визитов, дайджесты расписания и советы мастера) Приложение использует защищенную архитектуру:
+Для работы интеллектуальных функций (разбор сообщений клиентов из мессенджеров, контекстный перенос визитов, дайджесты расписания и советы мастера) Приложение использует модель искусственного интеллекта **Google Gemini 3.1 Flash Lite** (Google LLC, США) через зашифрованный серверный edge-прокси Cloudflare:
 
-* **Защищенный Серверный Прокси (Cloudflare Edge BFF):** Все сетевые запросы к модели искусственного интеллекта **Google Gemini 3.1 Flash Lite** передаются через серверный прокси (`https://rosetime-proxy.pyzhov-ai.workers.dev`), развернутый на изолированных edge-нодах Cloudflare. API-ключи изолированы в зашифрованном хранилище и недоступны клиентам.
-* **Маскировка персональных данных (Zero PII Armor):**
-  * Перед отправкой любого входящего текста в модель все телефонные номера автоматически вырезаются и заменяются маской `[PHONE]`.
-  * Имена клиентов заменяются анонимными токенами (`Client_1`, `Client_2`), а реальное сопоставление с локальной базой данных выполняется **строго на вашем устройстве** после получения структурированного ответа.
-* **Отсутствие обучения моделей:** Передаваемые данные являются временными (ephemeral), не сохраняются на дисках облачных провайдеров и **категорически не используются для обучения публичных нейросетей**.
-* **Автономный On-Device Мозг:** При отсутствии интернет-соединения Приложение автоматически переключается на встроенные офлайн-парсеры дат (`RussianDateParser`, `EnglishDateParser`) и банк из 40 авторских офлайн-советов.
-* **Явное согласие:** ИИ-функции активируются только при подтверждении согласия пользователя (`AIConsentView`) и могут быть отключены в Настройках в любой момент.
+* **Раскрытие передаваемых данных (What data is sent):** Передаются исключительно обезличенные параметры расписания — дата, время слотов, длительность сеанса и названия процедур из вашего прайс-листа (например, «Маникюр», «Педикюр»).
+* **Сторонний обработчик (Third-party processor):** Запросы направляются в API **Google Gemini** (Google LLC) через частный изолированный edge-прокси (`https://rosetime-proxy.pyzhov-ai.workers.dev`).
+* **Строгое исключение персональных данных (Zero-PII Armor):** Номера телефонов, фамилии клиентов и личные заметки мастера **НИКОГДА не передаются стороннему сервису**. Номера телефонов автоматически маскируются токеном `[PHONE]`, а имена подменяются анонимными идентификаторами (`Client_1`, `Client_2`). Реальное сопоставление с локальной базой данных выполняется строго на процессоре вашего iPhone после получения ответа.
+* **Защита данных и отсутствие обучения моделей:** Google LLC не сохраняет запросы пользователей API и не использует их для обучения своих публичных моделей машинного обучения. Google обеспечивает соответствие строгим стандартам защиты данных корпоративного уровня (GDPR, SOC 2, ISO 27001).
+* **Явное согласие пользователя (Consent First):** Приложение никогда не отправляет запросы к ИИ без предварительного явного согласия пользователя. Экран согласия (`AIConsentView`) демонстрируется до первого вызова функций ИИ и до оформления подписки. Пользователь может в любой момент отозвать согласие в Настройках приложения.
+* **Автономный On-Device режим:** При отсутствии интернет-соединения или отключении ИИ Приложение автоматически переключается на встроенные офлайн-парсеры дат (`RussianDateParser`, `EnglishDateParser`) и локальный банк из 40 авторских советов.
 
 ---
 
@@ -126,17 +125,16 @@ RoseTime serves as your personal smart scheduling assistant and salon CRM. The A
 
 ---
 
-### 4. Smart AI Assistant & Zero PII Shield
+### 4. Third-Party AI Data Processing (Google Gemini API) & Zero-PII Shield
 
-To empower intelligent natural-language scheduling (parsing messy messenger bookings, rescheduling appointments, calendar resolution, and daily salon digests), RoseTime leverages a hardened serverless architecture:
+To empower intelligent natural-language scheduling (parsing messenger bookings, rescheduling appointments, and daily salon insights), RoseTime utilizes the **Google Gemini 3.1 Flash Lite** AI model (Google LLC, USA) via an encrypted serverless edge proxy:
 
-* **Secure Cloudflare Edge BFF Proxy:** All requests to the **Google Gemini 3.1 Flash Lite** model pass through an isolated proxy (`https://rosetime-proxy.pyzhov-ai.workers.dev`) on Cloudflare's Edge V8 network. API credentials remain securely vaulted on the server.
-* **Zero PII Data Anonymization Armor:**
-  * Before any text is dispatched to the AI model, all phone numbers are sanitized with a regex and replaced by `[PHONE]`.
-  * Client names are substituted with anonymous pseudonyms (`Client_1`, `Client_2`), and genuine client identity binding occurs **strictly on your iPhone** after receiving the structured response.
-* **Zero Model Training:** Transmitted payloads are purely ephemeral, never logged to disk, and **never used to train public machine learning models**.
-* **Adaptive On-Device Offline Brain:** In offline mode or under network loss, the Application seamlessly falls back to on-device NLP parsers (`RussianDateParser`, `EnglishDateParser`) and an embedded vault of 40 expert master tips.
-* **Transparent Consent:** AI capabilities require explicit opt-in (`AIConsentView`) and can be toggled off at any moment in Settings.
+* **Disclose What Data is Sent:** Transmitted data includes solely anonymized schedule metrics: appointment dates, slot times, session durations, and service names from your catalog (e.g., "Manicure", "Pedicure").
+* **Third-Party Service Specification:** AI requests are dispatched exclusively to **Google Gemini API** (Google LLC) through a private isolated edge gateway (`https://rosetime-proxy.pyzhov-ai.workers.dev`).
+* **Zero-PII Data Anonymization Armor (Data NOT Sent):** Client phone numbers, client surnames, and private master notes are **NEVER transmitted to the third-party AI service**. Phone numbers are automatically stripped and masked with `[PHONE]`, and client names are replaced by anonymous tokens (`Client_1`, `Client_2`). Genuine database resolution occurs strictly on-device on your iPhone after the structured reply is received.
+* **Data Protection & Zero Model Training:** Google LLC does not retain customer API requests or use your data to train public machine learning models. Google provides enterprise-grade data protection complying with GDPR, SOC 2, and ISO 27001 standards.
+* **Explicit User Permission (Consent First):** The Application never dispatches AI requests without obtaining prior affirmative consent from the user. An in-app consent sheet (`AIConsentView`) detailing the third party and data handling is presented before any AI interaction or subscription purchase. Users can revoke consent anytime in app Settings.
+* **Adaptive On-Device Offline Brain:** When network is unavailable or AI is disabled, the Application seamlessly falls back to on-device NLP parsers (`RussianDateParser`, `EnglishDateParser`) and a local repository of 40 expert master tips.
 
 ---
 
