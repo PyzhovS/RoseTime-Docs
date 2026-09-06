@@ -36,6 +36,9 @@
 #### 6. Что делать при аварийном сбое базы данных?
 Приложение оснащено системой **Store Safety Shield** — при любом сбое базы данных создается защитная копия `.corrupt_<timestamp>`. Обратитесь в службу поддержки (`pyzhovs@icloud.com`), и инженер восстановит все ваши записи согласно [Регламенту восстановления (Runbook)](DATABASE_RECOVERY_RUNBOOK.md).
 
+#### 7. Как работает голосовая диктовка и безопасен ли микрофон?
+Функция голосовой диктовки в AI-Ассистенте создана специально для работы в перчатках. Микрофон активируется **строго по вашему нажатию на кнопку 🎤**. Речь расшифровывается локально через нативный Apple `Speech Framework`. Аудиозаписи никогда не сохраняются в виде файлов и не передаются в интернет. Вы можете в любой момент отключить доступ к микрофону в Настройках iPhone.
+
 ---
 ---
 
@@ -70,6 +73,9 @@ Navigate to Profile $\to$ Data Management $\to$ select **"Reset All Data"**. Thi
 
 #### 6. What if my database experiences an emergency crash?
 RoseTime features **Store Safety Shield** — any crash archives your data into `.corrupt_<timestamp>`. Reach out to support (`pyzhovs@icloud.com`), and an engineer will restore your client and appointment logs per the [Database Recovery Runbook](DATABASE_RECOVERY_RUNBOOK.md).
+
+#### 7. How does voice dictation work and is my microphone safe?
+Hands-free voice dictation in the AI Assistant was specifically engineered for beauty masters working in gloves. The microphone is activated **strictly upon your explicit tap on the mic button 🎤**. Speech is transcribed on-device via Apple's native `Speech Framework`. No audio recordings are ever stored or uploaded to external servers. You can revoke microphone permissions anytime in iPhone Settings.
 
 ---
 <p align="center">

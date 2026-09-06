@@ -58,14 +58,24 @@ RoseTime создано как ваш персональный интеллек�
 
 ---
 
-### 5. Уведомления и Live Activities (Виджеты)
+#### 5. Обработка аудиоданных и Голосовой ввод (Speech Recognition & Microphone)
+
+Для максимального удобства мастеров индустрии красоты, работающих в перчатках или во время процедур, RoseTime предоставляет функцию голосовой диктовки в AI-Ассистенте:
+* **Активация по требованию:** Микрофон активируется **исключительно по прямому нажатию пользователя на кнопку микрофона** 🎤 на экране ввода. Фоновая или скрытая запись звука категорически исключена.
+* **Локальная транзитная обработка (Apple Speech Framework):** Преобразование речи в текст осуществляется в реальном времени с использованием нативного системного фреймворка Apple `Speech` (`SFSpeechRecognizer`).
+* **Zero Audio Retention (Нулевое сохранение звука):** Аудиозаписи никогда не сохраняются в виде файлов на диске устройства, не выгружаются на серверы разработчика или сторонних провайдеров, не передаются рекламным трекерам и не используются для идентификации личности или профилирования.
+* **Управление доступом:** Пользователь может в любой момент отозвать системные разрешения на доступ к микрофону и распознаванию речи в настройках iOS (`Настройки` → `RoseTime`). При отказе приложение сохраняет полную функциональность в режиме ручного ввода.
+
+---
+
+### 6. Уведомления и Live Activities (Виджеты)
 
 * Приложение использует локальный системный центр уведомлений `UNUserNotificationCenter` для отправки напоминаний о визитах. Все уведомления генерируются локально на процессоре вашего устройства без использования удаленных Push-серверов.
 * Виджет экрана блокировки и Dynamic Island работают через нативный Apple `ActivityKit`. Состояние сессии передается напрямую в расширение виджета без отправки во внешнюю сеть.
 
 ---
 
-### 6. Право на Удаление и Управление Данными (Data Erasure)
+### 7. Право на Удаление и Управление Данными (Data Erasure)
 
 * Вы обладаете полным суверенным контролем над всей информацией в Приложении. Вы можете в любой момент изменить или удалить любого клиента, визит или услугу.
 * **Полный сброс данных («Сбросить все данные»):** В разделе настроек профиля доступна функция мгновенного безвозвратного удаления всей базы SwiftData и сброса настроек `UserDefaults`.
@@ -73,7 +83,7 @@ RoseTime создано как ваш персональный интеллек�
 
 ---
 
-### 7. Контакты и Обратная Связь
+### 8. Контакты и Обратная Связь
 
 По любым вопросам, связанным с настоящей Политикой конфиденциальности или безопасностью данных в RoseTime, вы можете обратиться к разработчику:
 
@@ -138,14 +148,24 @@ To empower intelligent natural-language scheduling (parsing messenger bookings, 
 
 ---
 
-### 5. Notifications & Live Activities (WidgetKit)
+### 5. Audio Data Processing & Voice Dictation (Speech Recognition & Microphone)
+
+To provide unmatched ergonomics for beauty professionals working in gloves or conducting procedures, RoseTime offers a hands-free voice dictation feature within the AI Assistant:
+* **On-Demand Activation:** The microphone is activated **strictly upon the user's explicit tap on the microphone button** 🎤 on the input card. Continuous or background audio listening is strictly impossible.
+* **Local & Transient Processing (Apple Speech Framework):** Audio-to-text transcription is performed in real-time utilizing Apple's native `Speech` framework (`SFSpeechRecognizer`).
+* **Zero Audio Retention:** Voice recordings are never stored as audio files on the device, are never uploaded to developer or third-party servers, are never shared with advertising trackers, and are never used for biometric profiling or identification.
+* **Permission Control:** Users can revoke microphone and speech recognition permissions at any time via iOS Settings (`Settings` → `RoseTime`). In case of denial, the application remains 100% operational via standard manual input and clipboard paste.
+
+---
+
+### 6. Notifications & Live Activities (WidgetKit)
 
 * The Application utilizes Apple’s local `UNUserNotificationCenter` for upcoming appointment alarms. All notifications are scheduled on-device without remote push notification servers.
 * Lock Screen widgets and Dynamic Island Live Activities operate through native Apple `ActivityKit`, streaming session states directly on the device with zero network transmission.
 
 ---
 
-### 6. User Data Control & Complete Erasure
+### 7. User Data Control & Complete Erasure
 
 * You maintain sovereign administrative control over your data. You can edit, update, or permanently delete any appointment, client, or catalog service at any time.
 * **Complete Data Reset ("Reset All Data"):** The Profile Settings menu provides a 1-tap option to permanently wipe all SwiftData databases and reset `UserDefaults`.
@@ -153,7 +173,7 @@ To empower intelligent natural-language scheduling (parsing messenger bookings, 
 
 ---
 
-### 7. Developer Contact Information
+### 8. Developer Contact Information
 
 If you have questions, inquiries, or feedback regarding this Privacy Policy or data security in RoseTime, please contact:
 
