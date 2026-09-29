@@ -51,7 +51,7 @@
 ИИ-Ассистент использует защищенный серверный шлюз и модель Google Gemini. Перед отправкой запроса номера телефонов клиентов аппаратно маскируются (`[PHONE]`), а имена клиентов обезличиваются. Никакие персональные данные клиентов не сохраняются в облаке и не используются для обучения нейросетей.
 
 #### 9. Что делать при аварийном сбое базы данных?
-Приложение оснащено системой **Store Safety Shield** — при любом сбое базы данных создается защитная копия `.corrupt_<timestamp>`. Обратитесь в службу поддержки (`pyzhovs@icloud.com`), и инженер поможет восстановить записи согласно [Регламенту восстановления (Runbook)](DATABASE_RECOVERY_RUNBOOK.md).
+Приложение оснащено системой **Store Safety Shield** — при любом сбое базы данных создается защитная копия `.corrupt_<timestamp>`. Обратитесь в службу поддержки (`pyzhovs@icloud.com`), и наша служба заботы оперативно поможет восстановить ваши записи.
 
 #### 10. Как работает голосовая диктовка и безопасен ли микрофон?
 Функция голосовой диктовки в AI-Ассистенте создана специально для работы в перчатках. Микрофон активируется **строго по вашему нажатию на кнопку 🎤**. Речь расшифровывается локально через нативный Apple `Speech Framework`. Аудиозаписи никогда не сохраняются в виде файлов и не передаются в интернет.
@@ -112,7 +112,7 @@ iOS деректерін стандартты көшіру кезінде («Ж�
 AI-Ассистент шифрланған серверлік прокси мен Google Gemini моделін пайдаланады. Сұранысты жібермес бұрын клиенттердің телефон нөмірлері аппараттық түрде жасырылады (`[PHONE]`), ал есімдері псевдонимдерге ауыстырылады. Клиенттердің ешқандай жеке деректері бұлтта сақталмайды және нейрожелілерді оқыту үшін қолданылмайды.
 
 #### 9. Деректер базасында апаттық ақау болса не істеу керек?
-Қосымша **Store Safety Shield** жүйесімен жабдықталған — базада қандай да бір ақау болған кезде `.corrupt_<timestamp>` сақтық көшірмесі жасалады. Қолдау қызметіне хабарласыңыз (`pyzhovs@icloud.com`), инженер жазбаларды [Қалпына келтіру регламентіне (Runbook)](DATABASE_RECOVERY_RUNBOOK.md) сәйкес қайтаруға көмектеседі.
+Қосымша **Store Safety Shield** жүйесімен жабдықталған — базада қандай да бір ақау болған кезде `.corrupt_<timestamp>` сақтық көшірмесі жасалады. Қолдау қызметіне хабарласыңыз (`pyzhovs@icloud.com`), біздің қолдау қызметі жазбаларыңызды жедел түрде қалпына келтіруге көмектеседі.
 
 #### 10. Дауыспен жазу қалай жұмыс істейді және микрофон қауіпсіз бе?
 AI-Ассистенттегі дауыспен жазу функциясы арнайы қолғаппен жұмыс істейтін шеберлер үшін жасалған. Микрофон **тек 🎤 батырмасын басқанда ғана** іске қосылады. Дыбыс жергілікті түрде Apple-дің нативті `Speech Framework` жүйесі арқылы танылады. Аудиожазбалар ешқашан файл ретінде сақталмайды және интернетке жіберілмейді.
@@ -173,7 +173,7 @@ RoseTime features the **Clean Slate Protocol**: go to Profile $	o$ Legal & Data 
 The smart assistant routes queries via a secure Cloudflare Edge gateway to Google Gemini models. Before transmission, phone numbers are scrubbed with `[PHONE]` and names are pseudonymized. Zero client PII is stored in the cloud or used to train models.
 
 #### 9. What if my database experiences an emergency crash?
-RoseTime features **Store Safety Shield** — any crash archives your data into `.corrupt_<timestamp>`. Reach out to support (`pyzhovs@icloud.com`), and an engineer will assist with recovery per the [Database Recovery Runbook](DATABASE_RECOVERY_RUNBOOK.md).
+RoseTime features **Store Safety Shield** — any crash archives your data into `.corrupt_<timestamp>`. Reach out to support (`pyzhovs@icloud.com`), and our dedicated support team will promptly assist with recovering your records.
 
 #### 10. How does voice dictation work and is my microphone safe?
 Hands-free voice dictation was engineered specifically for beauty masters working in gloves. The microphone is activated **strictly upon your explicit tap on the mic button 🎤**. Speech is transcribed on-device via Apple's native `Speech Framework`. No audio recordings are ever stored or uploaded.
